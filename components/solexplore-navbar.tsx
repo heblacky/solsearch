@@ -2,6 +2,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 import ConnectWalletButton from './connect-wallet-button';
 import { useWallet } from '@solana/wallet-adapter-react';
+import { TwitterIcon } from './icons';
 
 // Logo component that combines blockchain and magnifying glass
 const BlockchainSearchLogo: FC = () => {
@@ -94,6 +95,15 @@ export const SolanticsNavbar: FC = () => {
         </div>
         
         <div className="flex items-center gap-4">
+          <a 
+            href="https://x.com/solanticsxyz" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-white hover:text-purple-400 transition-colors"
+            aria-label="Twitter"
+          >
+            <TwitterIcon size={20} />
+          </a>
           <ConnectWalletButton />
         </div>
       </div>
