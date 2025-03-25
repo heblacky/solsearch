@@ -62,7 +62,7 @@ export const NewsletterSignup: FC = () => {
                   <div className="mb-2 text-2xl">🎉</div>
                   <h3 className="text-xl font-semibold text-white mb-2">Thank You for Subscribing!</h3>
                   <p className="text-gray-300">
-                    You've been added to our list. Get ready for the latest Solana news and insights.
+                    You&apos;ve been added to our list. Get ready for the latest Solana news and insights.
                   </p>
                   <button 
                     onClick={() => setIsSubmitted(false)} 
@@ -94,7 +94,7 @@ export const NewsletterSignup: FC = () => {
                   </div>
                   <p className="mt-4 text-xs text-gray-400">
                     By subscribing, you agree to our privacy policy and terms of service.
-                    We'll never spam you or sell your information.
+                    We&apos;ll never spam you or sell your information.
                   </p>
                 </form>
               )}

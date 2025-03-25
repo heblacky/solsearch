@@ -32,7 +32,7 @@ export const DefiDashboardPreview: FC = () => {
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Advanced DeFi Analytics Dashboard</h2>
         <p className="text-gray-300 max-w-3xl mx-auto">
-          Dive deep into Solana's DeFi ecosystem with our comprehensive analytics suite.
+          Dive deep into Solana&apos;s DeFi ecosystem with our comprehensive analytics suite.
           Monitor market trends, track liquidity pools, and analyze yield farming opportunities.
         </p>
       </motion.div>
