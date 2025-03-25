@@ -7,7 +7,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="/solantics-favicon.ico" />
+        <link rel="icon" href="/images/lgsol.png" />
       </Head>
       <body
         className={clsx(
