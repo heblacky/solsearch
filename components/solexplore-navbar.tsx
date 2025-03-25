@@ -3,6 +3,91 @@ import Link from 'next/link';
 import ConnectWalletButton from './connect-wallet-button';
 import { motion } from 'framer-motion';
 
+// Logo component that combines blockchain and magnifying glass
+const BlockchainSearchLogo: FC = () => {
+  return (
+    <svg 
+      width="40" 
+      height="40" 
+      viewBox="0 0 40 40" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className="text-white"
+    >
+      {/* Magnifying glass handle */}
+      <motion.path 
+        d="M32 32L24 24" 
+        stroke="url(#logoGradient)" 
+        strokeWidth="3" 
+        strokeLinecap="round"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      />
+
+      {/* Blockchain nodes */}
+      <motion.circle 
+        cx="12" cy="15" r="3" 
+        fill="url(#logoGradient)"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
+      />
+      <motion.circle 
+        cx="20" cy="10" r="3" 
+        fill="url(#logoGradient)"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
+      />
+      <motion.circle 
+        cx="18" cy="20" r="3" 
+        fill="url(#logoGradient)"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3, delay: 0.3 }}
+      />
+      <motion.circle 
+        cx="10" cy="25" r="3" 
+        fill="url(#logoGradient)"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3, delay: 0.4 }}
+      />
+
+      {/* Connections between nodes */}
+      <motion.path 
+        d="M12 15L20 10M20 10L18 20M18 20L10 25M10 25L12 15" 
+        stroke="url(#logoGradient)" 
+        strokeWidth="1.5"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      />
+
+      {/* Magnifying glass circle */}
+      <motion.circle 
+        cx="16" cy="16" r="10" 
+        stroke="url(#logoGradient)" 
+        strokeWidth="2.5" 
+        fill="transparent"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      />
+
+      {/* Gradient definition */}
+      <defs>
+        <linearGradient id="logoGradient" x1="8" y1="8" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#6366F1" />
+          <stop offset="0.5" stopColor="#8B5CF6" />
+          <stop offset="1" stopColor="#EC4899" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
+
 export const SolExploreNavbar: FC = () => {
   return (
     <motion.nav 
@@ -15,11 +100,11 @@ export const SolExploreNavbar: FC = () => {
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <motion.div
-              className="w-10 h-10 mr-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full flex items-center justify-center"
-              whileHover={{ scale: 1.1, rotate: 10 }}
+              className="mr-2 flex items-center justify-center"
+              whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              <span className="text-white text-xl font-bold">S</span>
+              <BlockchainSearchLogo />
             </motion.div>
             <motion.span 
               className="text-2xl font-bold gradient-text tracking-tight"
