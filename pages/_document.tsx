@@ -7,11 +7,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="/solantics-favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/solantics-favicon.svg" />
-        <link rel="shortcut icon" href="/solantics-favicon.svg" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#6366F1" />
+        <link rel="icon" href="/solantics-favicon.ico" />
       </Head>
       <body
         className={clsx(
