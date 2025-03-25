@@ -1,6 +1,7 @@
-import { createTheme } from "@heroui/theme";
+import { heroui } from "@heroui/theme";
 
-export const darkTheme = createTheme({
+// Export the theme configuration directly
+export const darkTheme = {
   type: "dark",
   theme: {
     colors: {
@@ -45,4 +46,4 @@ export const darkTheme = createTheme({
       },
     },
   },
-}); 
+}; 
