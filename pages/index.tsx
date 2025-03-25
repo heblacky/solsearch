@@ -3,6 +3,10 @@ import Head from 'next/head';
 import { motion } from 'framer-motion';
 import SolExploreNavbar from '../components/solexplore-navbar';
 import TokenInfographics from '../components/token-infographics';
+import DefiFeatures from '../components/defi-features';
+import TokenNetwork from '../components/token-network';
+import DefiDashboardPreview from '../components/defi-dashboard-preview';
+import NewsletterSignup from '../components/newsletter-signup';
 import { getAddressInfo, isValidSolanaAddress, TokenInfo } from '../services/solana-service';
 
 const Home: FC = () => {
@@ -52,8 +56,8 @@ const Home: FC = () => {
       <div className="animated-bg" />
       
       <Head>
-        <title>SolExplore | Solana Memecoin Explorer</title>
-        <meta name="description" content="Explore Solana memecoins, tokens, and wallet information with beautiful visualizations" />
+        <title>Solantics | Solana Analytics & DeFi Explorer</title>
+        <meta name="description" content="Advanced Solana analytics, DeFi insights and memecoin visualization with interactive dashboards" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
@@ -67,7 +71,7 @@ const Home: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Explore Solana Memecoins
+            Solantics Analytics
           </motion.h1>
           <motion.p 
             className="text-xl md:text-2xl mb-10 text-gray-300 max-w-3xl mx-auto font-light"
@@ -75,7 +79,7 @@ const Home: FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Analyze any Solana address or token with beautiful visualizations
+            Advanced Solana ecosystem insights with DeFi analytics and beautiful visualizations
           </motion.p>
           
           <motion.form 
@@ -136,6 +140,12 @@ const Home: FC = () => {
         
         <TokenInfographics tokenInfo={tokenInfo} isLoading={isLoading} />
         
+        <DefiFeatures />
+        
+        <TokenNetwork />
+        
+        <DefiDashboardPreview />
+        
         <section id="features" className="mt-20 pt-10">
           <motion.h2 
             className="text-3xl font-bold mb-10 text-center gradient-text tracking-tight"
@@ -182,6 +192,8 @@ const Home: FC = () => {
           </div>
         </section>
       </main>
+      
+      <NewsletterSignup />
       
       <footer className="glassmorphism p-6 mt-12 mx-4 mb-4">
         <div className="container mx-auto text-center">

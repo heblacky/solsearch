@@ -112,7 +112,7 @@ export const SolExploreNavbar: FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              SolExplore
+              Solantics
             </motion.span>
           </Link>
         </div>
