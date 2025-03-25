@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { motion } from 'framer-motion';
 
 export const DefiDashboardPreview: FC = () => {
   // Sample data for the visualizations
@@ -23,27 +22,15 @@ export const DefiDashboardPreview: FC = () => {
   
   return (
     <div className="w-full mt-20">
-      <motion.div 
-        className="text-center mb-10"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Advanced DeFi Analytics Dashboard</h2>
         <p className="text-gray-300 max-w-3xl mx-auto">
           Dive deep into Solana&apos;s DeFi ecosystem with our comprehensive analytics suite.
           Monitor market trends, track liquidity pools, and analyze yield farming opportunities.
         </p>
-      </motion.div>
+      </div>
       
-      <motion.div 
-        className="glassmorphism rounded-xl p-6 w-full max-w-6xl mx-auto shadow-2xl"
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-      >
+      <div className="glassmorphism rounded-xl p-6 w-full max-w-6xl mx-auto shadow-2xl">
         {/* Dashboard Header */}
         <div className="flex justify-between items-center mb-6">
           <h3 className="text-xl font-semibold gradient-text">Solantics Pro Dashboard</h3>
@@ -62,24 +49,11 @@ export const DefiDashboardPreview: FC = () => {
         {/* Dashboard Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {/* Market Overview */}
-          <motion.div 
-            className="bg-gray-900/60 rounded-lg p-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <div className="bg-gray-900/60 rounded-lg p-4">
             <h4 className="text-white text-lg mb-3">Market Overview</h4>
             <div className="space-y-3">
-              {marketData.map((item, index) => (
-                <motion.div 
-                  key={item.name} 
-                  className="flex justify-between items-center"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.1 * index }}
-                >
+              {marketData.map((item) => (
+                <div key={item.name} className="flex justify-between items-center">
                   <div className="flex items-center">
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center bg-gradient-to-r ${item.change > 0 ? 'from-green-400 to-cyan-500' : 'from-red-400 to-pink-500'}`}>
                       {item.name.charAt(0)}
@@ -92,30 +66,20 @@ export const DefiDashboardPreview: FC = () => {
                       {item.change > 0 ? '+' : ''}{item.change}%
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
           
           {/* Price Chart */}
-          <motion.div 
-            className="bg-gray-900/60 rounded-lg p-4 md:col-span-2"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
+          <div className="bg-gray-900/60 rounded-lg p-4 md:col-span-2">
             <h4 className="text-white text-lg mb-3">SOL Price</h4>
             <div className="h-40 flex items-end space-x-1">
               {chartData.map((value, index) => (
-                <motion.div
+                <div
                   key={index}
                   className="flex-1 bg-gradient-to-t from-purple-600 to-pink-500 rounded-t"
                   style={{ height: `${(value / maxValue) * 100}%` }}
-                  initial={{ height: 0 }}
-                  whileInView={{ height: `${(value / maxValue) * 100}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
                 />
               ))}
             </div>
@@ -126,60 +90,40 @@ export const DefiDashboardPreview: FC = () => {
                 <div key={month}>{month}</div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
         
         {/* Second row */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Liquidity Pools */}
-          <motion.div 
-            className="bg-gray-900/60 rounded-lg p-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
+          <div className="bg-gray-900/60 rounded-lg p-4">
             <h4 className="text-white text-lg mb-3">Top Liquidity Pools</h4>
             <div className="flex h-40 items-end space-x-6 justify-center">
-              {liquidityData.map((item, index) => (
+              {liquidityData.map((item) => (
                 <div key={item.protocol} className="flex flex-col items-center">
-                  <motion.div
+                  <div
                     className={`w-12 bg-gradient-to-t ${item.color} rounded-t`}
                     style={{ height: `${(item.value / 500) * 100}%` }}
-                    initial={{ height: 0 }}
-                    whileInView={{ height: `${(item.value / 500) * 100}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, delay: 0.2 * index }}
                   />
                   <div className="text-xs text-gray-300 mt-2">{item.protocol}</div>
                   <div className="text-white font-medium">${item.value}M</div>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
           
           {/* Yield Farming */}
-          <motion.div 
-            className="bg-gray-900/60 rounded-lg p-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
+          <div className="bg-gray-900/60 rounded-lg p-4">
             <h4 className="text-white text-lg mb-3">Yield Farming Opportunities</h4>
             <div className="space-y-4">
               {[
                 { pair: 'SOL-USDC', apy: '8.2%', tvl: '$12.5M', platform: 'Raydium' },
                 { pair: 'BONK-SOL', apy: '42.7%', tvl: '$5.2M', platform: 'Orca' },
                 { pair: 'ETH-SOL', apy: '6.5%', tvl: '$18.7M', platform: 'Jupiter' }
-              ].map((item, index) => (
-                <motion.div 
+              ].map((item) => (
+                <div 
                   key={item.pair}
                   className="flex justify-between items-center p-2 border border-gray-700 rounded-lg"
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: 0.1 * index }}
                 >
                   <div>
                     <div className="text-white">{item.pair}</div>
@@ -189,25 +133,19 @@ export const DefiDashboardPreview: FC = () => {
                     <div className="text-green-400 font-medium">APY: {item.apy}</div>
                     <div className="text-xs text-gray-400">TVL: {item.tvl}</div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
         
         {/* Coming Soon Badge */}
-        <motion.div 
-          className="mt-6 flex justify-center"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
+        <div className="mt-6 flex justify-center">
           <div className="bg-gradient-to-r from-purple-600 to-pink-500 rounded-full px-4 py-1 text-sm font-semibold">
             Pro Dashboard Coming Soon
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
   );
 };
